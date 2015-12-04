@@ -1,0 +1,521 @@
+============================================
+Print server WSDL url
+============================================
+https://pacific-brook-6617.herokuapp.com/ws/people?wsdl
+
+============================================
+Method #1 - readPersonList()
+============================================
+<?xml version="1.0" encoding="UTF-8"?><people>
+  <person>
+    <idPerson>1</idPerson>
+    <firstname>Chuck</firstname>
+    <lastname>Norris</lastname>
+    <birthdate>1945-01-01 00:00:00</birthdate>
+    <email>chuck.norris@gmail.com</email>
+    <username>chuck.norris</username>
+    <healthProfile>
+      <lifeStatus>
+        <measureType>
+          <idMeasureDef>2</idMeasureDef>
+          <name>height</name>
+        </measureType>
+        <value>186</value>
+      </lifeStatus>
+      <lifeStatus>
+        <measureType>
+          <idMeasureDef>1</idMeasureDef>
+          <name>weight</name>
+        </measureType>
+        <value>89</value>
+      </lifeStatus>
+    </healthProfile>
+  </person>
+  <person>
+    <idPerson>2</idPerson>
+    <firstname>Norris</firstname>
+    <lastname>Pinco</lastname>
+    <birthdate>1982-06-08 18:00:00</birthdate>
+    <email>pinco.pallino@gmail.com</email>
+    <username>pinco</username>
+    <healthProfile/>
+  </person>
+  <person>
+    <idPerson>1553</idPerson>
+    <firstname>newPerson</firstname>
+    <lastname>WithCreate</lastname>
+    <birthdate>1945-01-01 00:00:00</birthdate>
+    <email>chuck.norris@gmail.com</email>
+    <username>chuck.norris</username>
+    <healthProfile/>
+  </person>
+  <person>
+    <idPerson>1703</idPerson>
+    <firstname>Chuck6677d6bc-9b52-42f5-9a57-ae367d4132d0</firstname>
+    <lastname>WithCreate</lastname>
+    <birthdate>1945-01-01 00:00:00</birthdate>
+    <email>chuck.norris@gmail.com</email>
+    <username>chuck.norris</username>
+    <healthProfile>
+      <lifeStatus>
+        <measureType>
+          <idMeasureDef>1</idMeasureDef>
+          <name>weight</name>
+        </measureType>
+        <value>72.3</value>
+      </lifeStatus>
+      <lifeStatus>
+        <measureType>
+          <idMeasureDef>2</idMeasureDef>
+          <name>height</name>
+        </measureType>
+        <value>186</value>
+      </lifeStatus>
+    </healthProfile>
+  </person>
+</people>
+
+===================================================================
+Method #2 - readPerson(Long id) => readPerson(1)
+===================================================================
+<?xml version="1.0" encoding="UTF-8"?><person>
+  <idPerson>1</idPerson>
+  <firstname>Chuck</firstname>
+  <lastname>Norris</lastname>
+  <birthdate>1945-01-01 00:00:00</birthdate>
+  <email>chuck.norris@gmail.com</email>
+  <username>chuck.norris</username>
+  <healthProfile>
+    <lifeStatus>
+      <measureType>
+        <idMeasureDef>2</idMeasureDef>
+        <name>height</name>
+      </measureType>
+      <value>186</value>
+    </lifeStatus>
+    <lifeStatus>
+      <measureType>
+        <idMeasureDef>1</idMeasureDef>
+        <name>weight</name>
+      </measureType>
+      <value>89</value>
+    </lifeStatus>
+  </healthProfile>
+</person>
+
+===================================================================
+Method #3 - updatePerson(Person p)
+===================================================================
+Person with id 1703 before the update
+
+<?xml version="1.0" encoding="UTF-8"?><person>
+  <idPerson>1703</idPerson>
+  <firstname>Chuck6677d6bc-9b52-42f5-9a57-ae367d4132d0</firstname>
+  <lastname>WithCreate</lastname>
+  <birthdate>1945-01-01 00:00:00</birthdate>
+  <email>chuck.norris@gmail.com</email>
+  <username>chuck.norris</username>
+  <healthProfile>
+    <lifeStatus>
+      <measureType>
+        <idMeasureDef>1</idMeasureDef>
+        <name>weight</name>
+      </measureType>
+      <value>72.3</value>
+    </lifeStatus>
+    <lifeStatus>
+      <measureType>
+        <idMeasureDef>2</idMeasureDef>
+        <name>height</name>
+      </measureType>
+      <value>186</value>
+    </lifeStatus>
+  </healthProfile>
+</person>
+
+Updating person with id 1703 with the new 'firstname' => Chuck18e7285c-053e-46c5-b08c-7cd1d86576c0
+
+Person with id 1703 after the update...
+
+<?xml version="1.0" encoding="UTF-8"?><person>
+  <idPerson>1703</idPerson>
+  <firstname>Chuck18e7285c-053e-46c5-b08c-7cd1d86576c0</firstname>
+  <lastname>WithCreate</lastname>
+  <birthdate>1945-01-01 00:00:00</birthdate>
+  <email>chuck.norris@gmail.com</email>
+  <username>chuck.norris</username>
+  <healthProfile>
+    <lifeStatus>
+      <measureType>
+        <idMeasureDef>1</idMeasureDef>
+        <name>weight</name>
+      </measureType>
+      <value>72.3</value>
+    </lifeStatus>
+    <lifeStatus>
+      <measureType>
+        <idMeasureDef>2</idMeasureDef>
+        <name>height</name>
+      </measureType>
+      <value>186</value>
+    </lifeStatus>
+  </healthProfile>
+</person>
+
+===================================================================
+Method #4 - createPerson(Person p)
+===================================================================
+People number before creating the new person: 4
+New generated person ...
+
+<?xml version="1.0" encoding="UTF-8"?><person>
+  <idPerson>1805</idPerson>
+  <firstname>Pippo</firstname>
+  <lastname>Rossi</lastname>
+  <birthdate>1992-04-13</birthdate>
+  <email>ciao@hotmail.it</email>
+  <username>Pi Ro</username>
+  <healthProfile>
+    <lifeStatus>
+      <measureType>
+        <idMeasureDef>1</idMeasureDef>
+        <name>weight</name>
+      </measureType>
+      <value>80</value>
+    </lifeStatus>
+  </healthProfile>
+</person>
+
+People number after creating the new person: 5
+Generating the new list of people ...
+
+<?xml version="1.0" encoding="UTF-8"?><people>
+  <person>
+    <idPerson>1</idPerson>
+    <firstname>Chuck</firstname>
+    <lastname>Norris</lastname>
+    <birthdate>1945-01-01 00:00:00</birthdate>
+    <email>chuck.norris@gmail.com</email>
+    <username>chuck.norris</username>
+    <healthProfile>
+      <lifeStatus>
+        <measureType>
+          <idMeasureDef>2</idMeasureDef>
+          <name>height</name>
+        </measureType>
+        <value>186</value>
+      </lifeStatus>
+      <lifeStatus>
+        <measureType>
+          <idMeasureDef>1</idMeasureDef>
+          <name>weight</name>
+        </measureType>
+        <value>89</value>
+      </lifeStatus>
+    </healthProfile>
+  </person>
+  <person>
+    <idPerson>2</idPerson>
+    <firstname>Norris</firstname>
+    <lastname>Pinco</lastname>
+    <birthdate>1982-06-08 18:00:00</birthdate>
+    <email>pinco.pallino@gmail.com</email>
+    <username>pinco</username>
+    <healthProfile/>
+  </person>
+  <person>
+    <idPerson>1553</idPerson>
+    <firstname>newPerson</firstname>
+    <lastname>WithCreate</lastname>
+    <birthdate>1945-01-01 00:00:00</birthdate>
+    <email>chuck.norris@gmail.com</email>
+    <username>chuck.norris</username>
+    <healthProfile/>
+  </person>
+  <person>
+    <idPerson>1703</idPerson>
+    <firstname>Chuck18e7285c-053e-46c5-b08c-7cd1d86576c0</firstname>
+    <lastname>WithCreate</lastname>
+    <birthdate>1945-01-01 00:00:00</birthdate>
+    <email>chuck.norris@gmail.com</email>
+    <username>chuck.norris</username>
+    <healthProfile>
+      <lifeStatus>
+        <measureType>
+          <idMeasureDef>1</idMeasureDef>
+          <name>weight</name>
+        </measureType>
+        <value>72.3</value>
+      </lifeStatus>
+      <lifeStatus>
+        <measureType>
+          <idMeasureDef>2</idMeasureDef>
+          <name>height</name>
+        </measureType>
+        <value>186</value>
+      </lifeStatus>
+    </healthProfile>
+  </person>
+  <person>
+    <idPerson>1805</idPerson>
+    <firstname>Pippo</firstname>
+    <lastname>Rossi</lastname>
+    <birthdate>1992-04-13</birthdate>
+    <email>ciao@hotmail.it</email>
+    <username>Pi Ro</username>
+    <healthProfile>
+      <lifeStatus>
+        <measureType>
+          <idMeasureDef>1</idMeasureDef>
+          <name>weight</name>
+        </measureType>
+        <value>80</value>
+      </lifeStatus>
+    </healthProfile>
+  </person>
+</people>
+
+===================================================================
+Method #5 - deletePerson(Long id) => deletePerson(1805)
+===================================================================
+People number before deleting the new person: 5
+The following person is going to be deleted from the database...
+
+<?xml version="1.0" encoding="UTF-8"?><person>
+  <idPerson>1805</idPerson>
+  <firstname>Pippo</firstname>
+  <lastname>Rossi</lastname>
+  <birthdate>1992-04-13</birthdate>
+  <email>ciao@hotmail.it</email>
+  <username>Pi Ro</username>
+  <healthProfile>
+    <lifeStatus>
+      <measureType>
+        <idMeasureDef>1</idMeasureDef>
+        <name>weight</name>
+      </measureType>
+      <value>80</value>
+    </lifeStatus>
+  </healthProfile>
+</person>
+
+Person deleted successfully!!!
+People number after deleting the new person: 4
+
+Generating the new list of people...
+
+<?xml version="1.0" encoding="UTF-8"?><people>
+  <person>
+    <idPerson>1</idPerson>
+    <firstname>Chuck</firstname>
+    <lastname>Norris</lastname>
+    <birthdate>1945-01-01 00:00:00</birthdate>
+    <email>chuck.norris@gmail.com</email>
+    <username>chuck.norris</username>
+    <healthProfile>
+      <lifeStatus>
+        <measureType>
+          <idMeasureDef>2</idMeasureDef>
+          <name>height</name>
+        </measureType>
+        <value>186</value>
+      </lifeStatus>
+      <lifeStatus>
+        <measureType>
+          <idMeasureDef>1</idMeasureDef>
+          <name>weight</name>
+        </measureType>
+        <value>89</value>
+      </lifeStatus>
+    </healthProfile>
+  </person>
+  <person>
+    <idPerson>2</idPerson>
+    <firstname>Norris</firstname>
+    <lastname>Pinco</lastname>
+    <birthdate>1982-06-08 18:00:00</birthdate>
+    <email>pinco.pallino@gmail.com</email>
+    <username>pinco</username>
+    <healthProfile/>
+  </person>
+  <person>
+    <idPerson>1553</idPerson>
+    <firstname>newPerson</firstname>
+    <lastname>WithCreate</lastname>
+    <birthdate>1945-01-01 00:00:00</birthdate>
+    <email>chuck.norris@gmail.com</email>
+    <username>chuck.norris</username>
+    <healthProfile/>
+  </person>
+  <person>
+    <idPerson>1703</idPerson>
+    <firstname>Chuck18e7285c-053e-46c5-b08c-7cd1d86576c0</firstname>
+    <lastname>WithCreate</lastname>
+    <birthdate>1945-01-01 00:00:00</birthdate>
+    <email>chuck.norris@gmail.com</email>
+    <username>chuck.norris</username>
+    <healthProfile>
+      <lifeStatus>
+        <measureType>
+          <idMeasureDef>1</idMeasureDef>
+          <name>weight</name>
+        </measureType>
+        <value>72.3</value>
+      </lifeStatus>
+      <lifeStatus>
+        <measureType>
+          <idMeasureDef>2</idMeasureDef>
+          <name>height</name>
+        </measureType>
+        <value>186</value>
+      </lifeStatus>
+    </healthProfile>
+  </person>
+</people>
+
+===========================================================================================================================
+Method #6 - readPersonHistory(Long id, String measureType) => readPersonHistory(1, weight)
+===========================================================================================================================
+<?xml version="1.0" encoding="UTF-8"?><measureHistory>
+  <history>
+    <mid>1</mid>
+    <value>183</value>
+    <created>2012-12-27 23:00:00</created>
+  </history>
+  <history>
+    <mid>2</mid>
+    <value>80</value>
+    <created>2013-02-26 23:00:00</created>
+  </history>
+  <history>
+    <mid>3</mid>
+    <value>75</value>
+    <created>2013-06-29 22:00:00</created>
+  </history>
+  <history>
+    <mid>4</mid>
+    <value>72.3</value>
+    <created>2015-12-01 16:21:45</created>
+  </history>
+  <history>
+    <mid>204</mid>
+    <value>100</value>
+    <created>2015-12-04 18:16:39</created>
+  </history>
+  <history>
+    <mid>205</mid>
+    <value>89</value>
+    <created>2015-12-04 18:28:02</created>
+  </history>
+</measureHistory>
+
+===================================================================
+Method #7 - readMeasureTypes()
+===================================================================
+<?xml version="1.0" encoding="UTF-8"?><measureTypeList>
+  <measureType>weight</measureType>
+  <measureType>height</measureType>
+  <measureType>steps</measureType>
+  <measureType>blood pressure</measureType>
+  <measureType>heart rate</measureType>
+  <measureType>bmi</measureType>
+</measureTypeList>
+
+============================================================================================================================================
+Method #8 - readPersonMeasure(Long id, String measureType, Long mid) => readPersonMeasure(1, weight, 1)
+============================================================================================================================================
+<?xml version="1.0" encoding="UTF-8"?><measureHistory>
+  <history>
+    <mid>1</mid>
+    <value>183</value>
+    <created>2012-12-27 23:00:00</created>
+  </history>
+</measureHistory>
+
+============================================================================================================================================
+Method #9 - savePersonMeasure(Long id, Measure m) => savePersonMeasure(1, weight)
+============================================================================================================================================
+Number of measurements in the history (before updating the life status) for weight and id person 1 => 6
+Printing information for person with id 1 (before updating the life status) ...
+
+<?xml version="1.0" encoding="UTF-8"?><person>
+  <idPerson>1</idPerson>
+  <firstname>Chuck</firstname>
+  <lastname>Norris</lastname>
+  <birthdate>1945-01-01 00:00:00</birthdate>
+  <email>chuck.norris@gmail.com</email>
+  <username>chuck.norris</username>
+  <healthProfile>
+    <lifeStatus>
+      <measureType>
+        <idMeasureDef>2</idMeasureDef>
+        <name>height</name>
+      </measureType>
+      <value>186</value>
+    </lifeStatus>
+    <lifeStatus>
+      <measureType>
+        <idMeasureDef>1</idMeasureDef>
+        <name>weight</name>
+      </measureType>
+      <value>89</value>
+    </lifeStatus>
+  </healthProfile>
+</person>
+
+Number of measurements in the history (after updating the life status) for weight and id person 1 => 7
+Printing information for person with id 1 (after updating the life status) ...
+New updated value for weight => 89
+
+<?xml version="1.0" encoding="UTF-8"?><person>
+  <idPerson>1</idPerson>
+  <firstname>Chuck</firstname>
+  <lastname>Norris</lastname>
+  <birthdate>1945-01-01 00:00:00</birthdate>
+  <email>chuck.norris@gmail.com</email>
+  <username>chuck.norris</username>
+  <healthProfile>
+    <lifeStatus>
+      <measureType>
+        <idMeasureDef>2</idMeasureDef>
+        <name>height</name>
+      </measureType>
+      <value>186</value>
+    </lifeStatus>
+    <lifeStatus>
+      <measureType>
+        <idMeasureDef>1</idMeasureDef>
+        <name>weight</name>
+      </measureType>
+      <value>89</value>
+    </lifeStatus>
+  </healthProfile>
+</person>
+
+============================================================================================================================================
+Method #10 - updatePersonMeasure(Long id, Measure m) => updatePersonMeasure(1, 1)
+============================================================================================================================================
+Updating the measurement in the history with 'mid' = 1 and id person = 1
+updated 'value' => 46
+
+History of measurement before updating ...
+
+<?xml version="1.0" encoding="UTF-8"?><measureHistory>
+  <history>
+    <mid>1</mid>
+    <value>183</value>
+    <created>2012-12-27 23:00:00</created>
+  </history>
+</measureHistory>
+
+
+History of measurement after updating ...
+
+<?xml version="1.0" encoding="UTF-8"?><measureHistory>
+  <history>
+    <mid>1</mid>
+    <value>46</value>
+    <created>2012-12-27 23:00:00</created>
+  </history>
+</measureHistory>
+
